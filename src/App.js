@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
 import './blog.css';
+import Slider from './modules/shared/layouts/Slider';
 import Footer from './modules/shared/layouts/Footer';
 import Header from './modules/shared/layouts/Header';
 import NavMenu from './modules/shared/layouts/NavMenu';
@@ -12,7 +13,7 @@ class App extends Component {
       <div className='container'>
         <Header />
         <NavMenu />
-
+        <Slider />
 
         <div className="row mb-2">
           <div className="col-md-6">

@@ -1,0 +1,10 @@
+// Template for creating a custom Slide object
+function Slide(title, subtitle, background, link, slideIndex ) {
+	this.title = title;
+	this.subtitle = subtitle;
+	this.background = background;
+	this.link = link;
+	this.id = "slide" + slideIndex;
+}
+
+export default Slide;

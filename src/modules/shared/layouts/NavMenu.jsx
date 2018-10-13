@@ -1,24 +1,39 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class NavMenu extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      categories: [],
+    }
+  }
+
+  componentDidMount() {
+    axios.get(`http://localhost:4000/categories`)
+      .then(res => {
+        console.log('Categories --->', res);
+        const categories = res.data.categories;
+        this.setState({ categories: categories });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
   render() {
-    return(
-      <div className="nav-scroller py-1 mb-2">
-        <nav className="nav d-flex justify-content-between">
-          <a className="p-2 text-muted" href='javascipt:void(0)'>World</a>
-          <a className="p-2 text-muted" href={null}>U.S.</a>
-          <a className="p-2 text-muted" href={null}>Technology</a>
-          <a className="p-2 text-muted" href={null}>Design</a>
-          <a className="p-2 text-muted" href={null}>Culture</a>
-          <a className="p-2 text-muted" href={null}>Business</a>
-          <a className="p-2 text-muted" href={null}>Politics</a>
-          <a className="p-2 text-muted" href={null}>Opinion</a>
-          <a className="p-2 text-muted" href={null}>Science</a>
-          <a className="p-2 text-muted" href={null}>Health</a>
-          <a className="p-2 text-muted" href={null}>Style</a>
-          <a className="p-2 text-muted" href={null}>Travel</a>
+    let htmlData = <div></div>;
+    const categories = this.state.categories;
+
+    if(categories.length > 0) {
+      htmlData = <div className="nav-scroller py-1 mb-2">
+        <nav className="nav d-flex">
+          { categories.map(category => <a key={category.id} className='p-2' href={category.name}>{category.name}</a>)}
         </nav>
       </div>
+    }
+    return(
+      htmlData
     )
   }
 }

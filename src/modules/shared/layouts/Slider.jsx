@@ -35,8 +35,8 @@ class Slider extends Component {
   }
 
   componentDidMount() {
-    console.log('Didmount ----->', this.state.currentSlideIndex);
-    document.getElementById('slide' + this.state.currentSlideIndex).style.left = 0;
+    const currentSlide = document.getElementById('slide' + this.state.currentSlideIndex)
+    if (currentSlide) currentSlide.style.left = 0;
   }
 
   prevSlide(){

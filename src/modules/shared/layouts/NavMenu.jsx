@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 class NavMenu extends Component {
@@ -30,7 +31,7 @@ class NavMenu extends Component {
     if(categories.length > 0) {
       htmlData = <div className="nav-scroller py-1 mb-2">
         <nav className="nav d-flex">
-          { categories.map(category => <a key={category.id} className='p-2' href={category.name}>{category.name}</a>)}
+          { categories.map(category => <Link className='p-2' key={category.id} to={'/' + category.name}>{category.name}</Link>)}
         </nav>
       </div>
     }

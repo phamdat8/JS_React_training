@@ -8,6 +8,10 @@ import Header from './modules/shared/layouts/Header';
 import NavMenu from './modules/shared/layouts/NavMenu';
 import Sidebar from './modules/shared/layouts/Sidebar';
 import HotPost from './modules/shared/layouts/HotPost';
+import ShowCategory from './modules/categories/ShowCategory';
+
+import { Router, Route, Link } from "react-router-dom";
+// import Router from './routes/';
 
 class App extends Component {
   render() {
@@ -96,6 +100,7 @@ class App extends Component {
         </main>
 
         <Footer />
+        <Route path='/:category_name' component={ShowCategory} />
       </div>
     );
   }

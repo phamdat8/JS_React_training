@@ -3,20 +3,14 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
 import '../../blog.css';
 import Slider from '../shared/layouts/Slider';
-import Footer from '../shared/layouts/Footer';
-import Header from '../shared/layouts/Header';
-import NavMenu from '../shared/layouts/NavMenu';
 import Sidebar from '../shared/layouts/Sidebar';
 import HotPost from '../shared/layouts/HotPost';
 
 class Home extends Component {
   render() {
     return(
-      <div className='container'>
-        <Header />
-        <NavMenu />
+      <div>
         <Slider />
-
         <HotPost />
 
         <main role="main" className="container">
@@ -94,8 +88,6 @@ class Home extends Component {
             <Sidebar />
           </div>
         </main>
-
-        <Footer />
       </div>
     )
   }

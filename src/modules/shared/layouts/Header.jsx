@@ -9,7 +9,7 @@ class Header extends Component {
             <a className="text-muted" href={null}>Subscribe</a>
           </div>
           <div className="col-4 text-center">
-            <a className="blog-header-logo text-dark" href={null}>Large</a>
+            <a className="blog-header-logo text-dark" href='/'>Large</a>
           </div>
           <div className="col-4 d-flex justify-content-end align-items-center">
             <a className="text-muted" href={null}>

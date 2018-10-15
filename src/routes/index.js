@@ -1,11 +1,11 @@
 import React from 'react';
-import App from '../App';
+import Home from '../modules/home/';
 import ShowCategory from '../modules/categories/ShowCategory';
 import { Switch, Route } from 'react-router-dom';
 
 const Router = () => (
   <Switch>
-    <Route exact path='/' component={App} />
+    <Route exact path='/' component={Home} />
     <Route path='/:category_name' component={ShowCategory} />
   </Switch>
 );

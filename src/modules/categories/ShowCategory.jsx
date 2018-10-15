@@ -14,7 +14,6 @@ class ShowCategory extends Component {
 
         <h1>This is category show page</h1>
         <Footer />
-        <Route exact path='/' component={App} />
       </div>
     )
   }

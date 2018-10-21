@@ -11,7 +11,7 @@ class NavMenu extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4000/categories')
+    axios.get('https://behero-blog-api.herokuapp.com/categories')
       .then(res => {
         console.log('Categories --->', res);
         const categories = res.data.categories;

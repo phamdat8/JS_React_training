@@ -31,7 +31,7 @@ class NavMenu extends Component {
     if(categories.length > 0) {
       htmlData = <div className="nav-scroller py-1 mb-2">
         <nav className="nav d-flex">
-          { categories.map(category => <Link className='p-2' key={category.id} to={'/' + category.name}>{category.name}</Link>)}
+          { categories.map(category => <Link className='p-2' key={category.id} to={'/categories/' + category.id}>{category.name}</Link>)}
         </nav>
       </div>
     }

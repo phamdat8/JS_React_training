@@ -10,7 +10,9 @@ class App extends Component {
       <div  className='container'>
         <Header />
         <NavMenu />
+
         <Router />
+
         <Footer />
       </div>
     );

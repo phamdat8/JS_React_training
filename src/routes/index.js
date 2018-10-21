@@ -6,7 +6,7 @@ import { Switch, Route } from 'react-router-dom';
 const Router = () => (
   <Switch>
     <Route exact path='/' component={Home} />
-    <Route path='/:category_name' component={ShowCategory} />
+    <Route path='/categories/:id' component={ShowCategory} />
   </Switch>
 );
 

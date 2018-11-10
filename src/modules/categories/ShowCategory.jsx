@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Post  from './Post';
 import axios from 'axios';
 
 class ShowCategory extends Component {
@@ -45,17 +46,34 @@ class ShowCategory extends Component {
     let htmlData;
 
     if(posts.length > 0) {
-      htmlData = <div>
-        <ul>
-          { posts.map(post => <li key={post.id}><a href={'/posts/' + post.id }>{post.title}</a></li>) }
-        </ul>
-      </div>
+      htmlData = posts.map(post => <Post key={post.id} post />);
     }
 
     return(
       <div>
-        <h1>This is {this.state.category_name} category</h1>
-        { htmlData }
+        <div className="site-heading">
+          <div className="container">
+            <div className="term-heading align-middle align-justify">
+              <div className="term-header">
+                <h1>{this.state.category_name}</h1>
+                <p>The meaning behind the meetings</p>
+              </div>
+              <div className="term-count">
+                <span>5</span>Articles
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="content" className="site-content container">
+          <div id="primary" className="content-area">
+            <div className="posts-container">
+              <div className="row">
+                { htmlData }
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
